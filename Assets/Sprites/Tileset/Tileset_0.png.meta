@@ -2,7 +2,17 @@ fileFormatVersion: 2
 guid: 93e2d631dbaa93f49a3e0f04725b6b3b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Tileset_0_0
+    21300000: Ground_0_0
+    21300002: Tree_0_1
+    21300004: water_0_0
+    21300006: 1block_0_0
+    21300008: 2blocks_0_0
+    21300010: 3blocks_0_0
+    21300012: fence_0_0
+    21300014: treestump_0_0
+    21300016: bush_0_0
+    21300018: flower_bush1_0_0
+    21300020: flower_bush2_0_0
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -48,7 +58,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -118,21 +128,221 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tileset_0_0
+      name: Ground_0_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 4
         y: 340
-        width: 204
-        height: 136
+        width: 196
+        height: 135
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 4, y: 0, z: 4, w: 1}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1510f931359c5e74e92dc55a0ac1ef74
+      spriteID: 1d537ee2d87b38f4791e551d41a25518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_0_1
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 204
+        width: 246
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e71896096b7f154382ee264fbd8aa6f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_0_0
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 340
+        width: 68
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c74550919a6c743850771fba4f0f08
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1block_0_0
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 68
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a04fec28385d074d887ac52f09e71ae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2blocks_0_0
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 68
+        width: 136
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b6198e700aa7f441a07839c119f89bc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3blocks_0_0
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 68
+        width: 204
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027afe17e638dfa4783b0285c308c674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_0_0
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 136
+        width: 189
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b3a60ac0b0194447a73d7b38d72938f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: treestump_0_0
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 136
+        width: 102
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b7c79dedd26fc94c8c95c3afecc266f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bush_0_0
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 136
+        width: 88
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727963de5d7768c4da2f655f24411147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flower_bush1_0_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 68
+        width: 125
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc6c6baf246adf42bb36d61fa402c4a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flower_bush2_0_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 130
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9407b49e777a5c043abc7531c93834fb
       vertices: []
       indices: 
       edges: []
