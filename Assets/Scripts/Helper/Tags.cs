@@ -12,6 +12,8 @@ public class Tags : MonoBehaviour
     public static string SPIDER_TAG = "Spider";
     public static string GROUND_TAG = "Ground";
     public static string FROG_TAG = "Frog";
+    public static string MAIN_CAMERA = "MainCamera";
+    public static string COIN_TAG = "Coin";
 
 
 

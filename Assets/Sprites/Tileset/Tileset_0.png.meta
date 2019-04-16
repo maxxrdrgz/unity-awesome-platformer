@@ -13,6 +13,12 @@ TextureImporter:
     21300016: bush_0_0
     21300018: flower_bush1_0_0
     21300020: flower_bush2_0_0
+    21300022: spikes_0_0
+    21300024: floating_ground3_0_0
+    21300026: fence_0_0
+    21300028: RedFlower_0_0
+    21300030: YellowFlower3_0_0
+    21300032: YellowFlower3_2_0_0
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -248,26 +254,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fence_0_0
-      rect:
-        serializedVersion: 2
-        x: 211
-        y: 136
-        width: 189
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b3a60ac0b0194447a73d7b38d72938f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: treestump_0_0
       rect:
         serializedVersion: 2
@@ -276,7 +262,7 @@ TextureImporter:
         width: 102
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -296,7 +282,7 @@ TextureImporter:
         width: 88
         height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -316,7 +302,7 @@ TextureImporter:
         width: 125
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -336,13 +322,133 @@ TextureImporter:
         width: 130
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 9407b49e777a5c043abc7531c93834fb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spikes_0_0
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 340
+        width: 64
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd445cbe7042be54da67f95ee5c81817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floating_ground3_0_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 148
+        width: 204
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 515ad9cd61d458c4db7056e03c3394d3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_0_0
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 136
+        width: 189
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01912c780139db8459548553ffb4d59a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedFlower_0_0
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 204
+        width: 65
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025305ee4c115794baa4be0d2f4b9a22
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowFlower3_0_0
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 61
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73f6dd0ce25e6eb4ea12e5f0680604b7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowFlower3_2_0_0
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 136
+        width: 52
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa5e0cf5f94650469d4b5552fd6f0a6
       vertices: []
       indices: 
       edges: []

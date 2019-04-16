@@ -57,7 +57,7 @@ public class FireBullet : MonoBehaviour
     {
         //if(collision.gameObject.tag == Tags.BEETLE_TAG || collision.gameObject.tag == Tags.SNAIL_TAG || collision.gameObject.tag == Tags.BIRD_TAG)
         //{
-        if(collision.gameObject.tag != Tags.PLAYER_TAG)
+        if(collision.gameObject.tag != Tags.PLAYER_TAG && collision.gameObject.tag != Tags.MAIN_CAMERA)
         {
             canMove = false;
             anim.Play("Explode");

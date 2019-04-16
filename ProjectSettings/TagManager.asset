@@ -12,6 +12,9 @@ TagManager:
   - Egg
   - Spider
   - Frog
+  - Water
+  - Spikes
+  - Coin
   layers:
   - Default
   - TransparentFX

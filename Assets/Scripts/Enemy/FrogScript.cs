@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FrogScript : MonoBehaviour
 {
+    public LayerMask playerLayer;
+    private GameObject player;
+
     private Animator anim;
     private bool animation_started;
     private bool animation_finished;
@@ -21,26 +24,22 @@ public class FrogScript : MonoBehaviour
     void Start()
     {
         StartCoroutine(frogJumpCoroutine);
+        player = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Physics2D.OverlapCircle(transform.position, 0.5f, playerLayer))
+        {
+            player.GetComponent<PlayerDamage>().DealDamage();
+        }
+
         if(animation_finished && animation_started)
         {
             animation_started = false;
-            print("parent position:");
-            print(transform.parent.position);
-            print("child position:");
-            print(transform.position);
-
             transform.parent.position = transform.position;
             transform.localPosition = Vector3.zero;
-
-            print("AFTER parent position:");
-            print(transform.parent.position);
-            print("AFTER child position:");
-            print(transform.position);
         }
     }
 

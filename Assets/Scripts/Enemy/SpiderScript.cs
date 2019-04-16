@@ -63,5 +63,10 @@ public class SpiderScript : MonoBehaviour
         {
             moveDirection = Vector3.up;
         }
+
+        if(collision.tag == Tags.PLAYER_TAG)
+        {
+            collision.GetComponent<PlayerDamage>().DealDamage();
+        }
     }
 }
