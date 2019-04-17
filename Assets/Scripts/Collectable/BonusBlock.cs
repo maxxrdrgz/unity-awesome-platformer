@@ -14,10 +14,12 @@ public class BonusBlock : MonoBehaviour
     private Vector3 animPosition;
     private bool startAnim;
     private bool canAnimate = true;
+    private GameObject player;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG);
     }
 
     // Start is called before the first frame update
@@ -48,6 +50,7 @@ public class BonusBlock : MonoBehaviour
                     anim.Play("BlockIdle");
                     startAnim = true;
                     canAnimate = false;
+                    player.GetComponent<ScoreScript>().IncreaseScore(5);
                 }
             }
         }

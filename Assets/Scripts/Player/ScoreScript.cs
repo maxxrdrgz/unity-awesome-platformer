@@ -32,5 +32,10 @@ public class ScoreScript : MonoBehaviour
         }
     }
 
-
+    public void IncreaseScore(int score)
+    {
+        scoreCount += score;
+        coinTextScore.text = "x" + scoreCount;
+        audioManager.Play();
+    }
 }
