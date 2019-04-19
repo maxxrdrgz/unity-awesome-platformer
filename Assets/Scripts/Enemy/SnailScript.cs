@@ -98,6 +98,11 @@ public class SnailScript : MonoBehaviour
                     }
                 }
             }
+            else
+            {
+                print("I should change directions now");
+                ChangeDirection();
+            }
         }
 
 
@@ -117,6 +122,11 @@ public class SnailScript : MonoBehaviour
                         StartCoroutine(Dead(3f));
                     }
                 }
+            }
+            else
+            {
+                print("I should change directions now");
+                ChangeDirection();
             }
         }
 

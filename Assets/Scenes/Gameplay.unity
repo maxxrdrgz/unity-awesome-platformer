@@ -2913,6 +2913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70321d9977d995b4b91605b03d31e91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDeadSound: {fileID: 8300000, guid: f48402dccd521e44d8f9f53ae61933f8, type: 3}
 --- !u!82 &367376531
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16060,12 +16061,12 @@ PrefabInstance:
     - target: {fileID: 2564468409577508199, guid: 52c9edec811b55b4285742dfe9268f7d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.58
+      value: -2.714
       objectReference: {fileID: 0}
     - target: {fileID: 2564468409577508199, guid: 52c9edec811b55b4285742dfe9268f7d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.13
+      value: -4.184
       objectReference: {fileID: 0}
     - target: {fileID: 2564468409577508199, guid: 52c9edec811b55b4285742dfe9268f7d,
         type: 3}
@@ -16116,6 +16117,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564468409577508197, guid: 52c9edec811b55b4285742dfe9268f7d,
+        type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52c9edec811b55b4285742dfe9268f7d, type: 3}

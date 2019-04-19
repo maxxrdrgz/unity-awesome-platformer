@@ -79,6 +79,5 @@ public class FrogScript : MonoBehaviour
             transform.localScale = tempscale;
             jumpLeft = !jumpLeft;
         }
-        print("finished the jump animation");
     }
 }
