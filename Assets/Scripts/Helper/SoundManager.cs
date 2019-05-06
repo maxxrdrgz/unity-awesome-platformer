@@ -52,6 +52,7 @@ public class SoundManager : MonoBehaviour
     public void PlayLevelClearSound()
     {
         bg_source.Stop();
+        bg_source.loop = false;
         bg_source.clip = levelClear;
         bg_source.Play();
     }
