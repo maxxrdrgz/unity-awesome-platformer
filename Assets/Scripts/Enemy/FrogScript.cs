@@ -5,8 +5,9 @@ using UnityEngine;
 public class FrogScript : MonoBehaviour
 {
     public LayerMask playerLayer;
-    private GameObject player;
+    public LayerMask groundLayer;
 
+    private GameObject player;
     private Animator anim;
     private bool animation_started;
     private bool animation_finished;
@@ -35,12 +36,14 @@ public class FrogScript : MonoBehaviour
             player.GetComponent<PlayerDamage>().DealDamage();
         }
 
-        if(animation_finished && animation_started)
+        DetectGround();
+
+        if (animation_finished)
         {
-            animation_started = false;
             transform.parent.position = transform.position;
             transform.localPosition = Vector3.zero;
         }
+
     }
 
     IEnumerator FrogJump()
@@ -63,6 +66,7 @@ public class FrogScript : MonoBehaviour
     void AnimationFinished()
     {
         animation_finished = true;
+        animation_started = false;
         if (jumpLeft)
         {
             anim.Play("FrogIdleLeft");
@@ -78,6 +82,15 @@ public class FrogScript : MonoBehaviour
             tempscale.x *= -1;
             transform.localScale = tempscale;
             jumpLeft = !jumpLeft;
+        }
+    }
+
+    void DetectGround()
+    {
+        RaycastHit2D groundDetected = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.4f, groundLayer);
+        if (groundDetected && animation_started)
+        {
+            AnimationFinished();
         }
     }
 }
