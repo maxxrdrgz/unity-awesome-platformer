@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnailScript : MonoBehaviour
+public class EnemyWalkScript : MonoBehaviour
 {
     public float moveSpeed = 1f;
     public Transform left_Collision, right_Collision, top_Collision, down_Collision;
@@ -60,20 +60,20 @@ public class SnailScript : MonoBehaviour
 
         Collider2D topHit = Physics2D.OverlapCircle(top_Collision.position, 0.3f, playerLayer);
 
-        if(topHit != null)
+        if (topHit != null)
         {
-            if(topHit.gameObject.tag == Tags.PLAYER_TAG)
+            if (topHit.gameObject.tag == Tags.PLAYER_TAG)
             {
                 if (!stunned)
                 {
-                    topHit.gameObject.GetComponent<Rigidbody2D>().velocity = 
+                    topHit.gameObject.GetComponent<Rigidbody2D>().velocity =
                         new Vector2(topHit.gameObject.GetComponent<Rigidbody2D>().velocity.x, 7f);
                     canMove = false;
                     rbody.velocity = new Vector2(0, 0);
                     anim.Play("Stunned");
                     stunned = true;
                     // beetle code here
-                    if(tag == Tags.BEETLE_TAG)
+                    if (tag == Tags.BEETLE_TAG)
                     {
                         anim.Play("Stunned");
                         StartCoroutine(Dead(0.5f));
@@ -82,7 +82,7 @@ public class SnailScript : MonoBehaviour
             }
         }
 
-        if(leftHit)
+        if (leftHit)
         {
 
             if (leftHit.collider.gameObject.tag == Tags.PLAYER_TAG)
@@ -93,14 +93,14 @@ public class SnailScript : MonoBehaviour
                 }
                 else
                 {
-                    if(tag == Tags.SNAIL_TAG)
+                    if (tag == Tags.SNAIL_TAG)
                     {
                         rbody.velocity = new Vector2(15f, rbody.velocity.y);
                         StartCoroutine(Dead(3f));
                     }
                 }
             }
-            else if (leftHit.collider.gameObject.tag == Tags.BEETLE_TAG || 
+            else if (leftHit.collider.gameObject.tag == Tags.BEETLE_TAG ||
                 leftHit.collider.gameObject.tag == Tags.SNAIL_TAG ||
                 leftHit.collider.gameObject.tag == Tags.BLOCK_TAG)
             {
@@ -167,9 +167,9 @@ public class SnailScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == Tags.BULLET_TAG)
+        if (collision.gameObject.tag == Tags.BULLET_TAG)
         {
-            if(tag == Tags.BEETLE_TAG)
+            if (tag == Tags.BEETLE_TAG)
             {
                 anim.Play("Stunned");
                 canMove = false;
@@ -178,7 +178,7 @@ public class SnailScript : MonoBehaviour
                 StartCoroutine(Dead(0.3f));
             }
 
-            if(tag == Tags.SNAIL_TAG)
+            if (tag == Tags.SNAIL_TAG)
             {
                 if (!stunned)
                 {
@@ -192,6 +192,6 @@ public class SnailScript : MonoBehaviour
                     gameObject.SetActive(false);
                 }
             }
-        }    
+        }
     }
 }
