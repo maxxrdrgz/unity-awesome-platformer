@@ -73,6 +73,16 @@ public class PlayerDamage : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
     }
 
+    void InstantDeath()
+    {
+        Time.timeScale = 0f;
+        StartCoroutine(RestartGame());
+        boxCollider.isTrigger = true;
+        anim.Play("PlayerDied");
+        dead = true;
+        SoundManager.instance.PlayGameOverSound();
+    }
+
     void CheckIfDead()
     {
         if (dead)
@@ -80,6 +90,14 @@ public class PlayerDamage : MonoBehaviour
             Vector3 temp = transform.position;
             temp.y += -6f * Time.unscaledDeltaTime;
             transform.position = temp;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == Tags.WATER_TAG)
+        {
+            InstantDeath();
         }
     }
 }
