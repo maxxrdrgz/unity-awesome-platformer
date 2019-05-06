@@ -90,6 +90,7 @@ public class BirdScript : MonoBehaviour
                 Instantiate(birdEgg, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Quaternion.identity);
                 attacked = true;
                 anim.Play("BirdFly");
+                StartCoroutine(ReloadEgg());
             }
         }
     }
@@ -110,5 +111,12 @@ public class BirdScript : MonoBehaviour
             canMove = false;
             StartCoroutine(BirdDead());
         }
+    }
+
+    IEnumerator ReloadEgg()
+    {
+        yield return new WaitForSeconds(4f);
+        anim.Play("BirdStone");
+        attacked = false;
     }
 }
