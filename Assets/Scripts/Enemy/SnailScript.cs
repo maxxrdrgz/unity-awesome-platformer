@@ -173,8 +173,9 @@ public class SnailScript : MonoBehaviour
             {
                 anim.Play("Stunned");
                 canMove = false;
+                stunned = true;
                 rbody.velocity = new Vector2(0, 0);
-                StartCoroutine(Dead(0.4f));
+                StartCoroutine(Dead(0.3f));
             }
 
             if(tag == Tags.SNAIL_TAG)
