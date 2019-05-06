@@ -15,13 +15,26 @@ public class BossHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         canDamage = true;
     }
-
+    
+    /**
+        The canDamage bool determines whether or not the boss can be damaged.
+        Once called, this function will return a delay before setting canDamage
+        to true again.
+    
+        @returns {IEnumerator}
+    */
     IEnumerator WaitForDamage()
     {
         yield return new WaitForSeconds(1f);
         canDamage = true;
     }
 
+    /**
+        Detects if the boss's collider has collided with the bullet. If so, deal 
+        damage. Once boss dies, play sounds and restart game.
+    
+        @returns {void}
+    */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         print("hit");
@@ -45,6 +58,11 @@ public class BossHealth : MonoBehaviour
         }
     }
 
+    /**
+        Reloads the Gamplay scene after returning from time delay
+    
+        @returns {IEnumerator}
+    */
     IEnumerator RestartGame()
     {
         yield return new WaitForSecondsRealtime(7f);
