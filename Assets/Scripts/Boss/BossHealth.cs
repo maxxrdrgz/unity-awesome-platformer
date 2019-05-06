@@ -22,9 +22,10 @@ public class BossHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print("hit");
         if (canDamage)
         {
-            if (collision.tag == Tags.BULLET_TAG)
+            if (collision.gameObject.tag == Tags.BULLET_TAG)
             {
                 print("boss hit");
                 health--;

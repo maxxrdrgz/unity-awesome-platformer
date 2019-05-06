@@ -40,7 +40,7 @@ public class BossScript : MonoBehaviour
 
     IEnumerator StartAttack()
     {
-        yield return new WaitForSeconds(Random.Range(1f, 3f));
+        yield return new WaitForSeconds(Random.Range(1.5f, 4f));
         anim.Play("BossAttack");
         SoundManager.instance.PlayBossAttackSound();
         StartCoroutine(coroutine_Name);

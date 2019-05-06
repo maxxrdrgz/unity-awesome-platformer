@@ -24,7 +24,6 @@ public class SnailScript : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         left_collision_pos = left_Collision.localPosition;
         right_collision_pos = right_Collision.localPosition;
-        print(left_collision_pos);
     }
 
     // Start is called before the first frame update
@@ -131,14 +130,11 @@ public class SnailScript : MonoBehaviour
                 rightHit.collider.gameObject.tag == Tags.SNAIL_TAG ||
                 rightHit.collider.gameObject.tag == Tags.BLOCK_TAG)
             {
-                print(rightHit.collider.gameObject.name);
-                print(rightHit.collider.gameObject.tag);
                 ChangeDirection();
             }
         }
         if (!Physics2D.Raycast(down_Collision.position, Vector2.down, 0.1f, obstacleLayer))
         {
-            print("detected no ground");
             ChangeDirection();
         }
     }

@@ -44,9 +44,10 @@ GameObject:
   - component: {fileID: 4515329907719210099}
   - component: {fileID: 4515329907719210096}
   - component: {fileID: 6222693530566041586}
+  - component: {fileID: 4816046906774993258}
   m_Layer: 10
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,5 +193,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f54a830a2546c4d842f878eba5f078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stone: {fileID: 0}
+  stone: {fileID: 150491851000998612, guid: 0fd55a967a58ae643a54e542c7edfe31, type: 3}
   attackInstantiate: {fileID: 5869686087272048822}
+--- !u!114 &4816046906774993258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515329907719210097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed88ee0a43f4851429b2adf166ea1575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
