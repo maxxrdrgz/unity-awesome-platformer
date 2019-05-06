@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class BossHealth : MonoBehaviour
 {
@@ -35,9 +37,17 @@ public class BossHealth : MonoBehaviour
                     GetComponent<BossScript>().DeactivateBossScript();
                     anim.Play("BossDead");
                     SoundManager.instance.PlayLevelClearSound();
+                    Time.timeScale = 0f;
+                    StartCoroutine(RestartGame());
                 }
                 StartCoroutine(WaitForDamage());
             }
         }
+    }
+
+    IEnumerator RestartGame()
+    {
+        yield return new WaitForSecondsRealtime(7f);
+        SceneManager.LoadScene("Gameplay");
     }
 }

@@ -30,7 +30,7 @@ public class FireBullet : MonoBehaviour
         if (canMove)
         {
             Vector3 temp = transform.position;
-            temp.x += speed * Time.deltaTime;
+            temp.x += speed * Time.unscaledDeltaTime;
             transform.position = temp;
         }
     }

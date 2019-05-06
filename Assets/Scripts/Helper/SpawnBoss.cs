@@ -15,6 +15,7 @@ public class SpawnBoss : MonoBehaviour
         if(collision.gameObject.tag == Tags.PLAYER_TAG)
         {
             Instantiate(Boss, new Vector3(x_pos, y_pos, 0f), Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }
