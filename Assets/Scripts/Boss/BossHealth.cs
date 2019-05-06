@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossHealth : MonoBehaviour
 {
     private Animator anim;
-    private int health = 5;
+    private int health = 3;
     private bool canDamage;
 
     private void Awake()
@@ -16,7 +16,7 @@ public class BossHealth : MonoBehaviour
 
     IEnumerator WaitForDamage()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         canDamage = true;
     }
 

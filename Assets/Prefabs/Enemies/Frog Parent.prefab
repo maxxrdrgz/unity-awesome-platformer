@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 5502317679207938275}
   - component: {fileID: 5502317679207938300}
   - component: {fileID: 5502317679207938301}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Frog
   m_TagString: Frog
   m_Icon: {fileID: 0}
@@ -192,3 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2e0c585c8e9fe42b451a5bd875ea58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0

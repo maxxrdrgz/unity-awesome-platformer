@@ -17,6 +17,7 @@ TagManager:
   - Coin
   - Stone
   - Boss
+  - Block
   layers:
   - Default
   - TransparentFX
@@ -28,8 +29,8 @@ TagManager:
   - 
   - Ground
   - Player
-  - 
-  - 
+  - Enemy
+  - Obstacle
   - 
   - 
   - 

@@ -7,6 +7,7 @@ public class SnailScript : MonoBehaviour
     public float moveSpeed = 1f;
     public Transform left_Collision, right_Collision, top_Collision, down_Collision;
     public LayerMask playerLayer;
+    public LayerMask obstacleLayer;
 
     private Rigidbody2D rbody;
     private Animator anim;
@@ -21,8 +22,9 @@ public class SnailScript : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-        left_collision_pos = left_Collision.position;
-        right_collision_pos = right_Collision.position;
+        left_collision_pos = left_Collision.localPosition;
+        right_collision_pos = right_Collision.localPosition;
+        print(left_collision_pos);
     }
 
     // Start is called before the first frame update
@@ -54,8 +56,8 @@ public class SnailScript : MonoBehaviour
 
     void CheckCollision()
     {
-        RaycastHit2D leftHit = Physics2D.Raycast(left_Collision.position, Vector2.left, 0.1f, playerLayer);
-        RaycastHit2D rightHit = Physics2D.Raycast(right_Collision.position, Vector2.right, 0.1f, playerLayer);
+        RaycastHit2D leftHit = Physics2D.Raycast(left_Collision.position, Vector2.left, 0.1f, obstacleLayer);
+        RaycastHit2D rightHit = Physics2D.Raycast(right_Collision.position, Vector2.right, 0.1f, obstacleLayer);
 
         Collider2D topHit = Physics2D.OverlapCircle(top_Collision.position, 0.2f, playerLayer);
 
@@ -83,7 +85,8 @@ public class SnailScript : MonoBehaviour
 
         if(leftHit)
         {
-            if(leftHit.collider.gameObject.tag == Tags.PLAYER_TAG)
+
+            if (leftHit.collider.gameObject.tag == Tags.PLAYER_TAG)
             {
                 if (!stunned)
                 {
@@ -91,16 +94,17 @@ public class SnailScript : MonoBehaviour
                 }
                 else
                 {
-                    if(tag != Tags.BEETLE_TAG)
+                    if(tag == Tags.SNAIL_TAG)
                     {
                         rbody.velocity = new Vector2(15f, rbody.velocity.y);
                         StartCoroutine(Dead(3f));
                     }
                 }
             }
-            else
+            else if (leftHit.collider.gameObject.tag == Tags.BEETLE_TAG || 
+                leftHit.collider.gameObject.tag == Tags.SNAIL_TAG ||
+                leftHit.collider.gameObject.tag == Tags.BLOCK_TAG)
             {
-                print("I should change directions now");
                 ChangeDirection();
             }
         }
@@ -116,21 +120,23 @@ public class SnailScript : MonoBehaviour
                 }
                 else
                 {
-                    if(tag != Tags.BEETLE_TAG)
+                    if (tag == Tags.SNAIL_TAG)
                     {
                         rbody.velocity = new Vector2(-15f, rbody.velocity.y);
                         StartCoroutine(Dead(3f));
                     }
                 }
             }
-            else
+            else if (rightHit.collider.gameObject.tag == Tags.BEETLE_TAG ||
+                rightHit.collider.gameObject.tag == Tags.SNAIL_TAG ||
+                rightHit.collider.gameObject.tag == Tags.BLOCK_TAG)
             {
-                print("I should change directions now");
+                print(rightHit.collider.gameObject.name);
+                print(rightHit.collider.gameObject.tag);
                 ChangeDirection();
             }
         }
-
-        if (!Physics2D.Raycast(down_Collision.position, Vector2.down, 0.1f))
+        if (!Physics2D.Raycast(down_Collision.position, Vector2.down, 0.1f, obstacleLayer))
         {
             print("detected no ground");
             ChangeDirection();
@@ -145,14 +151,14 @@ public class SnailScript : MonoBehaviour
         if (moveLeft)
         {
             tempScale.x = Mathf.Abs(tempScale.x);
-            left_Collision.position = left_collision_pos;
-            right_Collision.position = right_collision_pos;
+            left_Collision.localPosition = left_collision_pos;
+            right_Collision.localPosition = right_collision_pos;
         }
         else
         {
             tempScale.x = -Mathf.Abs(tempScale.x);
-            left_Collision.position = right_collision_pos;
-            right_Collision.position = left_collision_pos;
+            left_Collision.localPosition = right_collision_pos;
+            right_Collision.localPosition = left_collision_pos;
         }
         transform.localScale = tempScale;
     }
