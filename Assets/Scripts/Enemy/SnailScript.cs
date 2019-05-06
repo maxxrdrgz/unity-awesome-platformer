@@ -58,7 +58,7 @@ public class SnailScript : MonoBehaviour
         RaycastHit2D leftHit = Physics2D.Raycast(left_Collision.position, Vector2.left, 0.1f, obstacleLayer);
         RaycastHit2D rightHit = Physics2D.Raycast(right_Collision.position, Vector2.right, 0.1f, obstacleLayer);
 
-        Collider2D topHit = Physics2D.OverlapCircle(top_Collision.position, 0.2f, playerLayer);
+        Collider2D topHit = Physics2D.OverlapCircle(top_Collision.position, 0.3f, playerLayer);
 
         if(topHit != null)
         {
