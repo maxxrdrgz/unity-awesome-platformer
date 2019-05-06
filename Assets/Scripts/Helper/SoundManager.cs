@@ -45,15 +45,15 @@ public class SoundManager : MonoBehaviour
     public void PlayGameOverSound()
     {
         bg_source.Stop();
-        general_audio_source.clip = gameover;
-        general_audio_source.Play();
+        bg_source.clip = gameover;
+        bg_source.Play();
     }
 
     public void PlayLevelClearSound()
     {
         bg_source.Stop();
-        general_audio_source.clip = levelClear;
-        general_audio_source.Play();
+        bg_source.clip = levelClear;
+        bg_source.Play();
     }
 
     public void PlayBossAttackSound()
