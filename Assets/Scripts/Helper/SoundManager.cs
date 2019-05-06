@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
-    public AudioSource bg_source, general_audio_source;
+    public AudioSource bg_source, coin_source, jump_source, boss_source;
     public AudioClip jump, levelClear, gameover, bossShot, coin;
 
     void Awake()
@@ -32,14 +32,14 @@ public class SoundManager : MonoBehaviour
 
     public void PlayJumpSound()
     {
-        general_audio_source.clip = jump;
-        general_audio_source.Play();
+        jump_source.clip = jump;
+        jump_source.Play();
     }
 
     public void PlayCoinSound()
     {
-        general_audio_source.clip = coin;
-        general_audio_source.Play();
+        coin_source.clip = coin;
+        coin_source.Play();
     }
 
     public void PlayGameOverSound()
@@ -59,7 +59,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayBossAttackSound()
     {
-        general_audio_source.clip = bossShot;
-        general_audio_source.Play();
+        boss_source.clip = bossShot;
+        boss_source.Play();
     }
 }
