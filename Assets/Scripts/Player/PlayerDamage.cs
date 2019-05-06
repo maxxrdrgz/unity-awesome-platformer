@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDamage : MonoBehaviour
 {
-    public AudioClip playerDeadSound;
-    private AudioSource audioManager;
     private Text lifeText;
     private int lifeScoreCount;
     private bool canDamage;
@@ -24,7 +22,6 @@ public class PlayerDamage : MonoBehaviour
         lifeScoreCount = 1;
         lifeText.text = "x" + lifeScoreCount;
         canDamage = true;
-        audioManager = GetComponent<AudioSource>();
     }
 
     public void DealDamage()
@@ -41,7 +38,7 @@ public class PlayerDamage : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 StartCoroutine(RestartGame());
-                audioManager.PlayOneShot(playerDeadSound);
+                SoundManager.instance.PlayGameOverSound();
             }
             canDamage = false;
             StartCoroutine(WaitForDamage());

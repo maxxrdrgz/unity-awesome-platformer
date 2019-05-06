@@ -86,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
                 jumped = true;
                 rbody.velocity = new Vector2(rbody.velocity.x, jumpPower);
                 anim.SetBool("Jump", true);
+                SoundManager.instance.PlayJumpSound();
             }
         }
     }

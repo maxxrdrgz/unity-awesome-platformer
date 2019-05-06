@@ -33,6 +33,7 @@ public class BossHealth : MonoBehaviour
                 {
                     GetComponent<BossScript>().DeactivateBossScript();
                     anim.Play("BossDead");
+                    SoundManager.instance.PlayLevelClearSound();
                 }
                 StartCoroutine(WaitForDamage());
             }

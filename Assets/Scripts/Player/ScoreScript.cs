@@ -6,13 +6,12 @@ using UnityEngine.UI;
 public class ScoreScript : MonoBehaviour
 {
     private Text coinTextScore;
-    private AudioSource audioManager;
     private int scoreCount;
 
 
     void Awake()
     {
-        audioManager = GetComponent<AudioSource>();
+
     }
 
     // Start is called before the first frame update
@@ -28,7 +27,7 @@ public class ScoreScript : MonoBehaviour
             collision.gameObject.SetActive(false);
             scoreCount++;
             coinTextScore.text = "x" + scoreCount;
-            audioManager.Play();
+            SoundManager.instance.PlayCoinSound();
         }
     }
 
@@ -36,6 +35,6 @@ public class ScoreScript : MonoBehaviour
     {
         scoreCount += score;
         coinTextScore.text = "x" + scoreCount;
-        audioManager.Play();
+        SoundManager.instance.PlayCoinSound();
     }
 }
