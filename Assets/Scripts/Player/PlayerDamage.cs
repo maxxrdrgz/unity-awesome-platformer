@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDamage : MonoBehaviour
 {
+    private Animator anim;
+    private Transform transform;
+    private BoxCollider2D boxCollider;
     private Text lifeText;
     private int lifeScoreCount;
     private bool canDamage;
+    private bool dead;
 
 
     void Start()
@@ -19,9 +23,17 @@ public class PlayerDamage : MonoBehaviour
     void Awake()
     {
         lifeText = GameObject.Find("LifeText").GetComponent<Text>();
+        transform = gameObject.GetComponent<Transform>();
+        anim = gameObject.GetComponent<Animator>();
+        boxCollider = gameObject.GetComponent<BoxCollider2D>();
         lifeScoreCount = 1;
         lifeText.text = "x" + lifeScoreCount;
         canDamage = true;
+    }
+
+    private void Update()
+    {
+        CheckIfDead();
     }
 
     public void DealDamage()
@@ -38,6 +50,9 @@ public class PlayerDamage : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 StartCoroutine(RestartGame());
+                boxCollider.isTrigger = true;
+                anim.Play("PlayerDied");
+                dead = true;
                 SoundManager.instance.PlayGameOverSound();
             }
             canDamage = false;
@@ -56,5 +71,15 @@ public class PlayerDamage : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(4.26f);
         SceneManager.LoadScene("Gameplay");
+    }
+
+    void CheckIfDead()
+    {
+        if (dead)
+        {
+            Vector3 temp = transform.position;
+            temp.y += -6f * Time.unscaledDeltaTime;
+            transform.position = temp;
+        }
     }
 }
