@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDamage : MonoBehaviour
 {
+    public int frame;
+
     private Animator anim;
     private Transform transform;
     private BoxCollider2D boxCollider;
@@ -13,6 +15,7 @@ public class PlayerDamage : MonoBehaviour
     private int lifeScoreCount;
     private bool canDamage;
     private bool dead;
+    private bool deathMoveUp = true;
 
 
     void Start()
@@ -33,7 +36,8 @@ public class PlayerDamage : MonoBehaviour
 
     private void Update()
     {
-        CheckIfDead();
+        AnimateDeath();
+        frame++;
     }
 
     public void DealDamage()
@@ -83,13 +87,26 @@ public class PlayerDamage : MonoBehaviour
         SoundManager.instance.PlayGameOverSound();
     }
 
-    void CheckIfDead()
+    void AnimateDeath()
     {
         if (dead)
         {
-            Vector3 temp = transform.position;
-            temp.y += -6f * Time.unscaledDeltaTime;
-            transform.position = temp;
+            if (deathMoveUp)
+            {
+                Vector3 temp = transform.position;
+                temp.y += 6f * Time.unscaledDeltaTime;
+                transform.position = temp;
+                if(frame % 26 == 0)
+                {
+                    deathMoveUp = false;
+                }
+            }
+            else
+            {
+                Vector3 temp2 = transform.position;
+                temp2.y += -6f * Time.unscaledDeltaTime;
+                transform.position = temp2;
+            }
         }
     }
 
