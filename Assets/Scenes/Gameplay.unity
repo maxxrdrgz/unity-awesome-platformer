@@ -6997,6 +6997,22 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!58 &867215888
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867215883}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1, y: 0.92}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!1001 &868819962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9614,6 +9630,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9736fa44792a8c644a6bff8c685ca63c, type: 3}
+--- !u!1 &1284403289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5920381647074866359, guid: 1220c67f2894de94f8fe3811ddabad42,
+    type: 3}
+  m_PrefabInstance: {fileID: 260797759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1284403292
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284403289}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.33, y: 0.26}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!4 &1297799972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 266592180947225819, guid: 1220c67f2894de94f8fe3811ddabad42,
@@ -10283,6 +10321,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.68, y: 0.81}
   m_EdgeRadius: 0
+--- !u!1 &1352505778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5920381647074866359, guid: 1220c67f2894de94f8fe3811ddabad42,
+    type: 3}
+  m_PrefabInstance: {fileID: 412974844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1352505781
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352505778}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.33, y: 0.26}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!1001 &1366152352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12688,6 +12748,28 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.98, y: 0.6}
+  serializedVersion: 2
+  m_Radius: 0.1
+--- !u!1 &1753069753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5920381647074866359, guid: 1220c67f2894de94f8fe3811ddabad42,
+    type: 3}
+  m_PrefabInstance: {fileID: 314916422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1753069756
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753069753}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.33, y: 0.26}
   serializedVersion: 2
   m_Radius: 0.1
 --- !u!1 &1770089249
@@ -15507,7 +15589,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003189965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 94.53, y: 0.19, z: -0.0071653295}
+  m_LocalPosition: {x: 93.07, y: 0.19, z: -0.0071653295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18016,12 +18098,12 @@ PrefabInstance:
     - target: {fileID: 5568254309238511291, guid: 233d802298b0c5c4da11ac9bda49a7f5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.279
+      value: 40.41
       objectReference: {fileID: 0}
     - target: {fileID: 5568254309238511291, guid: 233d802298b0c5c4da11ac9bda49a7f5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.89
+      value: -0.72
       objectReference: {fileID: 0}
     - target: {fileID: 5568254309238511291, guid: 233d802298b0c5c4da11ac9bda49a7f5,
         type: 3}
