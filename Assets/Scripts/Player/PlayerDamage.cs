@@ -95,7 +95,7 @@ public class PlayerDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == Tags.WATER_TAG)
+        if(collision.gameObject.tag == Tags.WATER_TAG || collision.gameObject.tag == Tags.SPIKES_TAG)
         {
             InstantDeath();
         }
