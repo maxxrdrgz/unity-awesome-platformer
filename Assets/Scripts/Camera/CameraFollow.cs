@@ -31,7 +31,10 @@ public class CameraFollow : MonoBehaviour
         followsPlayer = true;
     }
 
-    // Update is called once per frame
+    /**
+        Smoothly sets the camera's position to that of the targets (player) position
+        plus a positive offset in the x direction
+    */
     void FixedUpdate()
     {
         if (followsPlayer)
@@ -49,6 +52,4 @@ public class CameraFollow : MonoBehaviour
             }
         }
     }
-
-
 }
