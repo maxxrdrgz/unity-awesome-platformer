@@ -30,13 +30,16 @@ public class BonusBlock : MonoBehaviour
         animPosition.y += 0.15f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         CheckForCollision();
         AnimateUpDown();
     }
 
+    /**
+        Checks if player is below a Bonus Blocks bottom_Collision.position
+        If so, play its animations and increase the players coin score
+    */
     void CheckForCollision()
     {
         if (canAnimate)
@@ -55,7 +58,11 @@ public class BonusBlock : MonoBehaviour
             }
         }
     }
-
+    
+    /**
+        Moves the gameobjects transform up and down to give a Bonus Block a 
+        moving affect when hit from below.
+    */
     void AnimateUpDown()
     {
         if (startAnim)
@@ -67,7 +74,6 @@ public class BonusBlock : MonoBehaviour
             }else if(transform.position.y <= originPosition.y)
             {
                 startAnim = false;
-                //canAnimate = false;
             }
         }
     }
