@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ScaleBackground : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /** 
+        Scales the background image according to screen size
+        
+        @returns {void}
+    */
     void Start()
     {
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
