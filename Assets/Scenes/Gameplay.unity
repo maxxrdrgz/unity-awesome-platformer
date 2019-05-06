@@ -3285,6 +3285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70321d9977d995b4b91605b03d31e91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frame: 0
 --- !u!114 &367376532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7010,9 +7011,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1, y: 0.92}
+  m_Offset: {x: 1, y: 0.93}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.15
 --- !u!1001 &868819962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17565,7 +17566,7 @@ PrefabInstance:
     - target: {fileID: 2225873926146848402, guid: 1245ee1c3b8638645a6c30ffb3b1375c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2225873926146848402, guid: 1245ee1c3b8638645a6c30ffb3b1375c,
         type: 3}
@@ -18098,12 +18099,12 @@ PrefabInstance:
     - target: {fileID: 5568254309238511291, guid: 233d802298b0c5c4da11ac9bda49a7f5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.91
+      value: -8.86
       objectReference: {fileID: 0}
     - target: {fileID: 5568254309238511291, guid: 233d802298b0c5c4da11ac9bda49a7f5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.32
+      value: -3.79
       objectReference: {fileID: 0}
     - target: {fileID: 5568254309238511291, guid: 233d802298b0c5c4da11ac9bda49a7f5,
         type: 3}
