@@ -27,11 +27,20 @@ public class SpiderScript : MonoBehaviour
         MoveSpider();
     }
 
+    /** 
+        Changes the position of the spider's transform in the moveDirection
+    */
     void MoveSpider()
     {
         transform.Translate(moveDirection * Time.smoothDeltaTime);
     }
 
+    /** 
+        Changes the moveDirection up or down, then recursively starts itself in
+        a new coroutine.
+
+        @returns {IEnumerator} returns random time delay between 4 and 6 seconds
+    */
     IEnumerator ChangeMovement()
     {
         yield return new WaitForSeconds(Random.Range(4f, 6f));
@@ -46,12 +55,22 @@ public class SpiderScript : MonoBehaviour
         StartCoroutine(couroutine_name);
     }
 
+    /** 
+        Disables the spider gameobject
+
+        @returns {IEnumerator} returns a time delay of 3 seconds
+    */
     IEnumerator SpiderDead()
     {
         yield return new WaitForSeconds(3f);
         gameObject.SetActive(false);
     }
 
+    /** 
+        Detects collision with the bullet. If so, start the SpiderDead()
+        coroutine. If collision is with ground, change the direction. If the
+        collision is with the player, deal damage to player.
+    */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == Tags.BULLET_TAG)
