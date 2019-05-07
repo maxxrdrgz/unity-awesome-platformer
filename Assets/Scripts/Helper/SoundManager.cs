@@ -18,6 +18,9 @@ public class SoundManager : MonoBehaviour
         bg_source.Play();
     }
 
+    /** 
+        Creates a singleton only in the current Scene
+    */
     void MakeInstance()
     {
         if (instance == null)
