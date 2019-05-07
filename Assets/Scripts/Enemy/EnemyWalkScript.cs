@@ -35,7 +35,10 @@ public class EnemyWalkScript : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    /** 
+        Sets the enemie's rigid body's velocity to move in either the left
+        or right direction. Also checks for collision.
+    */
     void Update()
     {
         if (canMove)
@@ -53,9 +56,30 @@ public class EnemyWalkScript : MonoBehaviour
         CheckCollision();
     }
 
+    /** 
+        Checks for collisions on either the left, right or top of the gameobject.
+        If a collision is detected from the top from the player, the enemy
+        gameobject will will be in a stunned state where it can no longer move
+        and start the Dead coroutine.
+
+        Detects collision from left or right side. If collision is with the
+        player, deals damage to the player. If in the stunned state and the
+        gameobject is the snail, the snail will be pushed in the opposite
+        direction of the collision. If the collision is with another walking
+        enemy type or a block, the enemy will change directions.
+
+        Detects collision downwards with the ground. If no ground is detected,
+        gameobject changes direction.
+
+    */
     void CheckCollision()
     {
-        RaycastHit2D leftHit = Physics2D.Raycast(left_Collision.position, Vector2.left, 0.1f, obstacleLayer);
+        RaycastHit2D leftHit = Physics2D.Raycast(
+                                    left_Collision.position, 
+                                    Vector2.left, 
+                                    0.1f, 
+                                    obstacleLayer
+                                );
         RaycastHit2D rightHit = Physics2D.Raycast(right_Collision.position, Vector2.right, 0.1f, obstacleLayer);
 
         Collider2D topHit = Physics2D.OverlapCircle(top_Collision.position, 0.3f, playerLayer);
@@ -139,6 +163,10 @@ public class EnemyWalkScript : MonoBehaviour
         }
     }
 
+    /** 
+        Flips the sign on the scale of the gameobject to mirror it in the
+        opposite direction. Also changes the left and right colliders as well.
+    */
     void ChangeDirection()
     {
         moveLeft = !moveLeft;
@@ -159,12 +187,24 @@ public class EnemyWalkScript : MonoBehaviour
         transform.localScale = tempScale;
     }
 
+    /** 
+        Disables the gameobjec this script is attached (enemy) to after
+        specified time delay.
+
+        @returns {IEnumerator} returns time delay specified by the callee
+    */
     IEnumerator Dead(float timer)
     {
         yield return new WaitForSeconds(timer);
         gameObject.SetActive(false);
     }
 
+    /** 
+        Detects collision with the bullet. If the game object is the beetle,
+        the gameobject will start the dead coroutine. If the gameobject is the
+        snail, it will be stunned if not already stunned and it will become
+        disabled if already stunned.
+    */
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == Tags.BULLET_TAG)
