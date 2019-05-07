@@ -21,7 +21,7 @@ public class BossHealth : MonoBehaviour
         Once called, this function will return a delay before setting canDamage
         to true again.
     
-        @returns {IEnumerator}
+        @returns {IEnumerator} returns a 1 second delay
     */
     IEnumerator WaitForDamage()
     {
@@ -32,8 +32,6 @@ public class BossHealth : MonoBehaviour
     /**
         Detects if the boss's collider has collided with the bullet. If so, deal 
         damage. Once boss dies, play sounds and restart game.
-    
-        @returns {void}
     */
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -61,7 +59,7 @@ public class BossHealth : MonoBehaviour
     /**
         Reloads the Gamplay scene after returning from time delay
     
-        @returns {IEnumerator}
+        @returns {IEnumerator} returns a 7 second delay in real time
     */
     IEnumerator RestartGame()
     {

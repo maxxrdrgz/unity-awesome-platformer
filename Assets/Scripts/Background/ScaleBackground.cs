@@ -6,8 +6,6 @@ public class ScaleBackground : MonoBehaviour
 {
     /** 
         Scales the background image according to screen size
-        
-        @returns {void}
     */
     void Start()
     {
