@@ -9,7 +9,10 @@ public class SpawnBoss : MonoBehaviour
     private float x_pos = 107.9466f;
     private float y_pos = -2.94f;
 
-
+    /** 
+        Detects collision with player. If true, destory this gameobject and
+        instantiate the boss gameobject.
+    */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == Tags.PLAYER_TAG)
