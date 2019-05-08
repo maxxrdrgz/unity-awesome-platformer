@@ -29,7 +29,7 @@ public class PlayerDamage : MonoBehaviour
         transform = gameObject.GetComponent<Transform>();
         anim = gameObject.GetComponent<Animator>();
         boxCollider = gameObject.GetComponent<BoxCollider2D>();
-        lifeScoreCount = 1;
+        lifeScoreCount = 3;
         lifeText.text = "x" + lifeScoreCount;
         canDamage = true;
     }

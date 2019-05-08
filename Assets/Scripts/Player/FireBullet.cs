@@ -16,12 +16,12 @@ public class FireBullet : MonoBehaviour
 
     /** 
         When the bullet gameobject is instantiated, start a coroutine to
-        disable the bullet after 5 seconds
+        disable the bullet after 3 seconds
     */
     void Start()
     {
         canMove = true;
-        StartCoroutine(DisableBullet(5f));
+        StartCoroutine(DisableBullet(1f));
     }
 
     // Update is called once per frame
@@ -76,7 +76,9 @@ public class FireBullet : MonoBehaviour
     */
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag != Tags.PLAYER_TAG && collision.gameObject.tag != Tags.MAIN_CAMERA)
+        if(collision.gameObject.tag != Tags.PLAYER_TAG && 
+           collision.gameObject.tag != Tags.MAIN_CAMERA &&
+           collision.gameObject.tag != Tags.COIN_TAG)
         {
             canMove = false;
             anim.Play("Explode");
