@@ -34,12 +34,20 @@ public class PlayerDamage : MonoBehaviour
         canDamage = true;
     }
 
+    /** 
+        Keeps track of how many frames have passed and calls AnimateDeath()
+    */
     private void Update()
     {
         AnimateDeath();
         frame++;
     }
 
+    /** 
+        Decreases the life score count. If the life score is 0, restarts the
+        game, play the game over sound and set the collider to isTrigger. If
+        life score is not 0, start coroutine calling WaitForDamage()
+    */
     public void DealDamage()
     {
         if (canDamage)
@@ -65,18 +73,32 @@ public class PlayerDamage : MonoBehaviour
 
     }
 
+    /** 
+        Sets canDamage bool to true
+
+        @returns {IEnumerator} returns a time delay of 2 seconds
+    */
     IEnumerator WaitForDamage()
     {
         yield return new WaitForSeconds(2f);
         canDamage = true;
     }
 
+    /** 
+        Loads the Gameplay scene
+
+        @returns {IEnumerator} returns a time delay of 4.26 seconds
+    */
     IEnumerator RestartGame()
     {
         yield return new WaitForSecondsRealtime(4.26f);
         SceneManager.LoadScene("Gameplay");
     }
 
+    /** 
+        Calls the coruotine to restart the scene, plays the game over sound and
+        animates the players death.
+    */
     void InstantDeath()
     {
         Time.timeScale = 0f;
@@ -87,6 +109,10 @@ public class PlayerDamage : MonoBehaviour
         SoundManager.instance.PlayGameOverSound();
     }
 
+    /** 
+        While the players death animation is playing, this function will
+        move the player up and then down.
+    */
     void AnimateDeath()
     {
         if (dead)
@@ -110,9 +136,15 @@ public class PlayerDamage : MonoBehaviour
         }
     }
 
+    /** 
+        Detects collision with water or spikes. If true, call InstantDeath()
+
+        @params {Collider2D} The other Collider2D involved in this collision.
+    */
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == Tags.WATER_TAG || collision.gameObject.tag == Tags.SPIKES_TAG)
+        if(collision.gameObject.tag == Tags.WATER_TAG || 
+           collision.gameObject.tag == Tags.SPIKES_TAG)
         {
             InstantDeath();
         }

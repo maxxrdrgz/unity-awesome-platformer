@@ -191,6 +191,7 @@ public class EnemyWalkScript : MonoBehaviour
         Disables the gameobjec this script is attached (enemy) to after
         specified time delay.
 
+        @param {float} The amount of time for the delay
         @returns {IEnumerator} returns time delay specified by the callee
     */
     IEnumerator Dead(float timer)
@@ -204,6 +205,8 @@ public class EnemyWalkScript : MonoBehaviour
         the gameobject will start the dead coroutine. If the gameobject is the
         snail, it will be stunned if not already stunned and it will become
         disabled if already stunned.
+
+        @param {Collider2D} The other Collider2D involved in this collision.
     */
     void OnTriggerEnter2D(Collider2D collision)
     {

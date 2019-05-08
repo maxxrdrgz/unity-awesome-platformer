@@ -13,6 +13,11 @@ public class FireBullet : MonoBehaviour
         anim = GetComponent<Animator>();
     }
     // Start is called before the first frame update
+
+    /** 
+        When the bullet gameobject is instantiated, start a coroutine to
+        disable the bullet after 5 seconds
+    */
     void Start()
     {
         canMove = true;
@@ -25,6 +30,9 @@ public class FireBullet : MonoBehaviour
         Move();
     }
 
+    /** 
+        Moves the bullet horizontally
+    */
     void Move()
     {
         if (canMove)
@@ -47,23 +55,33 @@ public class FireBullet : MonoBehaviour
         }
     }
 
+    /** 
+        Disables the gameobject (bullet) that this script is attached to
+
+        @param {float} amount of time to delay for 
+        @returns {IEnumerator} returns time delay of specified time
+    */
     IEnumerator DisableBullet(float timer)
     {
         yield return new WaitForSeconds(timer);
         gameObject.SetActive(false);
     }
 
+    /** 
+        Detects collision will all colliders except with the player and the 
+        camera. After collision is detected, starts a coroutine to disable the
+        bullet gameobject after .1 seconds.
+
+        @param {Collider2D} the other collider2d involved in the collision
+    */
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if(collision.gameObject.tag == Tags.BEETLE_TAG || collision.gameObject.tag == Tags.SNAIL_TAG || collision.gameObject.tag == Tags.BIRD_TAG)
-        //{
         if(collision.gameObject.tag != Tags.PLAYER_TAG && collision.gameObject.tag != Tags.MAIN_CAMERA)
         {
             canMove = false;
             anim.Play("Explode");
             StartCoroutine(DisableBullet(0.1f));
         }
-        //}
     }
 
 }

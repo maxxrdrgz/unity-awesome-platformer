@@ -70,6 +70,8 @@ public class SpiderScript : MonoBehaviour
         Detects collision with the bullet. If so, start the SpiderDead()
         coroutine. If collision is with ground, change the direction. If the
         collision is with the player, deal damage to player.
+
+        @param {Collider2D} The other Collider2D involved in this collision.
     */
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -68,6 +68,8 @@ public class BirdScript : MonoBehaviour
 
     /** 
         Swaps the sign on the x scale to mirror the gameobjects transform
+
+        @param {Vector3} The direction that gameobject should travel in.
     */
     void ChangeDirection(Vector3 direction)
     {
@@ -129,6 +131,8 @@ public class BirdScript : MonoBehaviour
         Detects if the gameobject has collided with a bullet. If so, plays
         the bird dead animation, changes the rigid body type to make the
         object fall from the sky, and starts the bird dead coroutine.
+    
+        @param {Collider2D} The other Collider2D involved in this collision.
     */
     private void OnTriggerEnter2D(Collider2D collision)
     {

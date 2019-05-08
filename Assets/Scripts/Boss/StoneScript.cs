@@ -26,6 +26,8 @@ public class StoneScript : MonoBehaviour
     /**
         Detects collision with the player. If player has been collided with
         disable the gameobject and deal damage to the player.
+
+        @param {Collider2D} The other Collider2D involved in this collision.
     */
     private void OnTriggerEnter2D(Collider2D collision)
     {

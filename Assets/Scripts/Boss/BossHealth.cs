@@ -32,6 +32,8 @@ public class BossHealth : MonoBehaviour
     /**
         Detects if the boss's collider has collided with the bullet. If so, deal 
         damage. Once boss dies, play sounds and restart game.
+
+        @param {Collider2D} The other Collider2D involved in this collision
     */
     private void OnTriggerEnter2D(Collider2D collision)
     {

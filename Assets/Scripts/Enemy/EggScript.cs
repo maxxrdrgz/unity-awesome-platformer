@@ -8,6 +8,8 @@ public class EggScript : MonoBehaviour
         Detects collision with the player. If so deal damage to the player and
         disable the gameobject this script is applied to. The egg (stone) in
         this case.
+
+        @param {Collision2D} The Collision2D data associated with this collision.
     */
     private void OnCollisionEnter2D(Collision2D collision)
     {

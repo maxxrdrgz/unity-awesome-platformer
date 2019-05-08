@@ -12,6 +12,8 @@ public class SpawnBoss : MonoBehaviour
     /** 
         Detects collision with player. If true, destory this gameobject and
         instantiate the boss gameobject.
+
+        @param {Collider2D} The other Collider2D involved in this collision.
     */
     private void OnTriggerEnter2D(Collider2D collision)
     {

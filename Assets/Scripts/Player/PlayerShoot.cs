@@ -11,6 +11,11 @@ public class PlayerShoot : MonoBehaviour
         ShootBullet();
     }
 
+    /** 
+        Detects input from user. If user presses the J key, instantiate the
+        bullet gameobject and fire the bullet either in the positive or negative
+        determined by the gameobjects scale.
+    */
     void ShootBullet()
     {
         if (Input.GetKeyDown(KeyCode.J))

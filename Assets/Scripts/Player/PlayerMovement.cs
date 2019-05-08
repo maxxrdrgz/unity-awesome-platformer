@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //print("called second");
     }
 
     // Update is called once per frame
@@ -42,6 +41,10 @@ public class PlayerMovement : MonoBehaviour
         PlayerWalk();
     }
 
+    /** 
+        Gets horizontal input from user (arrowkeys) and ands velocity to players
+        rigid body in the corresponding direction
+    */
     void PlayerWalk()
     {
         float h = Input.GetAxisRaw("Horizontal");
@@ -49,12 +52,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rbody.velocity = new Vector2(speed, rbody.velocity.y);
             ChangeDirection(true);
-            //sr.flipX = false;
         }else if(h < 0)
         {
             rbody.velocity = new Vector2(-speed, rbody.velocity.y);
             ChangeDirection(false);
-            //sr.flipX = true;
         }
         else
         {
@@ -64,6 +65,9 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("Speed", Mathf.Abs((int)rbody.velocity.x));
     }
 
+    /** 
+        Detects if player is on the ground, if so, allows the player to jump.
+    */
     void CheckIfGrounded()
     {
         isGrounded = Physics2D.Raycast(groundCheckPosition.position, Vector2.down, 0.1f, groundLayer);
@@ -77,6 +81,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /** 
+        If grounded, gets Spacebar input from player, changes the y velocity by 
+        the jumpPower of units. Sets animator param jump to true.
+    */
     void PlayerJump()
     {
         if (isGrounded)
@@ -91,6 +99,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /** 
+        Yet another example of how to switch the sign on the gameobjects scale
+
+        @param {bool} Specify to move right
+    */
     void ChangeDirection(bool moveRight)
     {
         Vector3 tempScale = transform.localScale;
